@@ -1,0 +1,493 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.game {
+  background: #c2c2c2;
+  -webkit-animation: dropdown 0.3s;
+          animation: dropdown 0.3s;
+  z-index: 2;
+}
+
+.welcome {
+  width: 100%;
+  height: 100vh;
+  background: url("https://unsplash.it/1920/1084");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.welcome h1 {
+  color: #8dfc8d;
+  font-weight: 800;
+  font-size: 3.6rem;
+}
+
+.welcome__container, .welcome__player {
+  -webkit-box-shadow: 0px 0px 20px 9px rgba(49, 49, 49, 0.473);
+          box-shadow: 0px 0px 20px 9px rgba(49, 49, 49, 0.473);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 800px;
+  height: 70vh;
+  background: rgba(126, 126, 126, 0.493);
+  border-radius: 20px;
+}
+
+.welcome__container .selection, .welcome__player .selection {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: dropdown .3s ease;
+          animation: dropdown .3s ease;
+}
+
+.welcome__container .selection__button, .welcome__player .selection__button {
+  width: 90%;
+  height: 50px;
+  background: transparent;
+  border: 2px white solid;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.3rem;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.welcome__container .selection__button:hover, .welcome__player .selection__button:hover {
+  background: white;
+  color: #8dfc8d;
+}
+
+.welcome__player {
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.welcome__player--player1, .welcome__player--player2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  height: 80%;
+  color: white;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-animation: dropdown .3s ease;
+          animation: dropdown .3s ease;
+}
+
+.welcome__player--submit {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: dropdown .3s ease;
+          animation: dropdown .3s ease;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.submit {
+  width: 200px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit::before {
+  content: "Play";
+  color: #8dfc8d;
+  line-height: 50px;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+.submit:hover::before {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.back:before {
+  content: "Back";
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.player__input {
+  width: 200px;
+  height: 50px;
+  border: 0;
+  background: transparent;
+  font-size: 1.3rem;
+  text-align: center;
+  border-bottom: 2px white solid;
+  color: white;
+  outline: none;
+}
+
+.player__input::-webkit-input-placeholder {
+  color: white;
+}
+
+.player__input:-ms-input-placeholder {
+  color: white;
+}
+
+.player__input::-ms-input-placeholder {
+  color: white;
+}
+
+.player__input::placeholder {
+  color: white;
+}
+
+.player__input:focus {
+  border-color: #8dfc8d;
+}
+
+.player__color {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.player__color::-webkit-color-swatch {
+  border-radius: 50%;
+}
+
+.player__color:hover {
+  border: 2px solid #8dfc8d;
+}
+
+.player__color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.player__control {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: 800;
+  border-radius: 10px;
+  border: 2px solid white;
+  background: #8dfc8d;
+}
+
+.player__controlPanel {
+  text-align: center;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+}
+
+.disabled:hover {
+  background: transparent !important;
+  color: white !important;
+}
+
+.alert {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgba(126, 126, 126, 0.493);
+  color: white;
+  font-size: 1.3rem;
+  line-height: 100px;
+  text-align: center;
+  -webkit-animation: dropdown 0.2s ease;
+          animation: dropdown 0.2s ease;
+  display: none;
+}
+
+.game__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: url("https://unsplash.it/1920/1084");
+}
+
+.control__panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 800px;
+  height: 75px;
+}
+
+.control__panel--element {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  background: rgba(126, 126, 126, 0.753);
+  border-right: 2px solid #8dfc8d;
+}
+
+.control__panel--element:nth-child(n+2):nth-child(-n+4) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.control__panel--element .button {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: white;
+  font-weight: 800;
+  font-size: 1.3rem;
+  border: 2px solid #8dfc8d;
+  border-right: 0;
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.control__panel--element .button:hover {
+  background: #8dfc8d;
+  color: black;
+}
+
+.control__panel--element:nth-child(5) {
+  border: 0;
+}
+
+.control__panel--element:nth-child(5) .button {
+  border: 2px solid #8dfc8d;
+  border-left: 0;
+}
+
+.playerName {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.playerScore {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.time {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.round {
+  color: #8dfc8d;
+  font-size: 1.3rem;
+}
+
+@-webkit-keyframes dropdown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  background: #8dfc8d;
+  color: white;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.loader img {
+  width: 150px;
+  height: 150px;
+  -webkit-animation: spin 2s infinite linear;
+          animation: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(1.5);
+            transform: rotate(180deg) scale(1.5);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(1.5);
+            transform: rotate(180deg) scale(1.5);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+/*# sourceMappingURL=style.css.map */
